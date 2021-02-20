@@ -31,11 +31,11 @@ describe 'The method name_score' do
     expect(name_score('AMY', 1)).to be_a Integer
   end
 
-  it 'should return 39 for the name AMY if it is the first element in an array' do
-    expect(name_score('COLIN', 2)).to eq 159
+  it 'should return 39 for the name AMY if it is the 1st name in a list' do
+    expect(name_score('AMY', 0)).to eq 39
   end
 
-  it 'should return 159 for the name COLIN if it is the second element in an array' do
+  it 'should return 159 for the name COLIN if it is the 3rd name in a list' do
     expect(name_score('COLIN', 2)).to eq 159
   end
 end
