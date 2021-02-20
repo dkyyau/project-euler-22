@@ -12,7 +12,7 @@ end
 def alphabetical_value(name)
   total = 0
 
-  # each_byte gets the ASCII key for each letter, take away 64 to get position in alphabet
+  # each_byte gets the ASCII key for each letter, take away 64 to get position in alphabet (only for uppercase letters)
   name.each_byte do |byte|
     total += byte - 64
   end

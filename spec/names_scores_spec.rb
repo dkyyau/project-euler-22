@@ -1,8 +1,24 @@
 require 'names_scores'
 
+describe 'The method get_names' do
+  name_data = '"AMY","BOB","COLIN"'
+
+  it 'should return an array' do
+    expect(get_names(name_data)).to be_a Array
+  end
+
+  it 'should return an array of formatted names' do
+    expect(get_names(name_data)).to eq %w[AMY BOB COLIN]
+  end
+end
+
 describe 'The method alphabetical_value' do
   it 'should return an Integer' do
     expect(alphabetical_value('AMY')).to be_a Integer
+  end
+
+  it 'should return 39 for the name AMY' do
+    expect(alphabetical_value('AMY')).to eq 39
   end
 
   it 'should return 53 for the name COLIN' do
@@ -15,7 +31,11 @@ describe 'The method name_score' do
     expect(name_score('AMY', 1)).to be_a Integer
   end
 
-  it 'should return 159 for the name COLIN' do
+  it 'should return 39 for the name AMY if it is the first element in an array' do
+    expect(name_score('COLIN', 2)).to eq 159
+  end
+
+  it 'should return 159 for the name COLIN if it is the second element in an array' do
     expect(name_score('COLIN', 2)).to eq 159
   end
 end
